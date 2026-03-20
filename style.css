@@ -230,10 +230,10 @@ body {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   animation: fadeInDown 0.6s ease;
+  mix-blend-mode: multiply;
 }
 
 .hero-badge .acm-logo {
-  mix-blend-mode: multiply;
   height: 80px;
   width: auto;
   display: block;
