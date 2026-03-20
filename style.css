@@ -341,6 +341,9 @@ body {
   font-weight: 700;
   color: white;
   line-height: 1;
+  font-variant-numeric: tabular-nums;
+  min-width: 4ch;
+  text-align: left;
 }
 
 .stat-label {
@@ -820,6 +823,7 @@ body {
   color: var(--primary-dark);
   line-height: 1;
   margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
 }
 
 .dataset-stat-card .stat-name {
