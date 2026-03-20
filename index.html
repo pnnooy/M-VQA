@@ -2,111 +2,576 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Machine-oriented Visual Media Quality Assessment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M-VQA Challenge | Machine-oriented Visual Media Quality Assessment</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <i class="fas fa-eye"></i>
+        <span>M-VQA Challenge</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#overview"><i class="fas fa-home"></i> Overview</a></li>
+        <li><a href="#dates"><i class="fas fa-calendar-alt"></i> Dates</a></li>
+        <li><a href="#structure"><i class="fas fa-sitemap"></i> Structure</a></li>
+        <li><a href="#dataset"><i class="fas fa-database"></i> Dataset</a></li>
+        <li><a href="#evaluation"><i class="fas fa-chart-line"></i> Evaluation</a></li>
+        <li><a href="#submission"><i class="fas fa-upload"></i> Submit</a></li>
+        <li><a href="#organizers"><i class="fas fa-users"></i> Team</a></li>
+      </ul>
+      <a href="https://www.codabench.org/competitions/13658/" class="nav-cta" target="_blank">
+        <i class="fas fa-rocket"></i> Join Challenge
+      </a>
+    </div>
+  </nav>
 
-<!-- 顶部导航 -->
-<nav>
-  <h2>PV Challenge 2026</h2>
-  <ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#dates">Dates</a></li>
-    <li><a href="#dataset">Dataset</a></li>
-    <li><a href="#evaluation">Evaluation</a></li>
-    <li><a href="#submit">Submit</a></li>
-    <li><a href="#organizers">Organizers</a></li>
-  </ul>
-</nav>
+  <header class="hero">
+    <div class="hero-bg">
+      <div class="hero-particles"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-trophy"></i> PV Challenge 2026
+      </div>
+      <h1>Machine-oriented Visual Media<br>Quality Assessment</h1>
+      <p class="hero-subtitle">Exploring and enhancing the visual robustness of Vision-Language Models (VLMs) within complex, real-world physical environments</p>
+      <div class="hero-buttons">
+        <a href="https://www.codabench.org/competitions/13658/" class="btn btn-primary" target="_blank">
+          <i class="fas fa-play-circle"></i> Start Competing
+        </a>
+        <a href="#overview" class="btn btn-secondary">
+          <i class="fas fa-book-open"></i> Learn More
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <i class="fas fa-images"></i>
+          <div class="stat-info">
+            <span class="stat-number">12,400</span>
+            <span class="stat-label">Images</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-robot"></i>
+          <div class="stat-info">
+            <span class="stat-number">11</span>
+            <span class="stat-label">VLMs</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-layer-group"></i>
+          <div class="stat-info">
+            <span class="stat-number">30</span>
+            <span class="stat-label">Distortion Types</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </header>
 
-<!-- Hero 区 -->
-<header>
-  <h1>Machine-oriented Visual Media Quality Assessment</h1>
-  <p>Exploring and enhancing the visual robustness of Vision-Language Models (VLMs) within complex, real-world physical environments</p>
-  <a class="btn" href="https://www.codabench.org/competitions/13658/#/pages-tab">Join on Codabench</a>
-</header>
+  <section id="overview" class="section overview-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-info-circle"></i> Overview</span>
+        <h2>Welcome to M-VQA Challenge</h2>
+        <p class="section-desc">Bridging Image Quality Assessment and Visual Question Answering for robust embodied intelligence</p>
+      </div>
 
-<!-- Overview -->
-<section id="overview">
-  <h2>Overview</h2>
-  <p>
-    Vision-Language Models (VLMs) act as the "eyes" and "brains" of modern embodied agents. However, the physical world is filled with uncertainties: motion blur, poor lighting, sensor noise, and transmission loss.
-	An agent's ability to maintain stable visual understanding under these harsh conditions is critical for achieving safe and reliable embodied intelligence. This challenge bridges Image Quality Assessment (IQA) and Visual Question Answering (VQA) to measure the performance degradation of models under various levels of visual distortion.
-  </p>
-</section>
+      <div class="overview-grid">
+        <div class="overview-main">
+          <div class="card card-gradient">
+            <div class="card-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>Background</h3>
+            <p>Vision-Language Models (VLMs) act as the "eyes" and "brains" of modern embodied agents. However, the physical world is filled with uncertainties: <strong>motion blur</strong>, <strong>poor lighting</strong>, <strong>sensor noise</strong>, and <strong>transmission loss</strong>.</p>
+            <p>An agent's ability to maintain stable visual understanding under these harsh conditions is critical for achieving safe and reliable embodied intelligence. This challenge bridges Image Quality Assessment (IQA) and Visual Question Answering (VQA) to measure the performance degradation of models under various levels of visual distortion.</p>
+          </div>
+        </div>
 
-<!-- Dates -->
-<section id="dates">
-  <h2>Important Dates</h2>
-  <ul class="timeline">
-    <li><b>Dataset Release:</b> February 22 2026</li>
-    <li><b>Final Submission:</b> March 15 2026</li>
-    <li><b>Workshop:</b> October 27 2026</li>
-  </ul>
-</section>
+        <div class="overview-features">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-microscope"></i>
+            </div>
+            <h4>Synthetic to Real</h4>
+            <p>Evolution from controlled simulation environments to real-world robotic deployment</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h4>Performance Metrics</h4>
+            <p>Correlate quality metrics with ground-truth VLM performance scores</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h4>Robustness Testing</h4>
+            <p>30 distinct distortion types across 5 severity levels</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h4>Two Tracks</h4>
+            <p>Absolute Score & Relative Score evaluation tracks</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Dataset -->
-<section id="dataset">
-  <h2>Dataset</h2>
-  <div class="card">
-    <p>
-      The dataset includes multi-modal data:
-    </p>
-    <ul>
-      <li>RGB images</li>
-      <li>Depth / LiDAR</li>
-      <li>Robot pose</li>
-      <li>Cleaning annotations</li>
-    </ul>
-  </div>
-</section>
+  <section id="dates" class="section dates-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-calendar-alt"></i> Timeline</span>
+        <h2>Important Dates</h2>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <i class="fas fa-database"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date">February 22, 2026</div>
+            <h4>Dataset Release</h4>
+            <p>Training, validation, and test datasets become available for all participants</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <i class="fas fa-flag-checkered"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date">March 15, 2026</div>
+            <h4>Final Submission</h4>
+            <p>Deadline for all competition submissions on CodaBench</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date">October 27, 2026</div>
+            <h4>Workshop</h4>
+            <p>Results presentation and awards ceremony at the PV Challenge workshop</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Evaluation -->
-<section id="evaluation">
-  <h2>Evaluation</h2>
-  <div class="card">
-    <ul>
-      <li>Localization Error (RMSE)</li>
-      <li>Coverage Rate</li>
-      <li>Cleaning Efficiency</li>
-    </ul>
-  </div>
-</section>
+  <section id="structure" class="section structure-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-sitemap"></i> Competition Structure</span>
+        <h2>Competition Structure & Core Tasks</h2>
+        <p class="section-desc">The competition evolves from synthetic simulation to real-world deployment</p>
+      </div>
 
-<!-- Submission -->
-<section id="submit">
-  <h2>Submission</h2>
-  <p>
-    Please submit your results via Codabench:
-  </p>
-  <a class="btn" href="https://www.codabench.org/competitions/13658/">Submit Here</a>
-</section>
+      <div class="structure-grid">
+        <div class="structure-card main-round">
+          <div class="round-badge">
+            <i class="fas fa-flask"></i>
+            <span>Preliminary Round</span>
+          </div>
+          <h3>In-Silico Phase</h3>
+          <p class="round-desc">The current online competition focuses on a large-scale dataset. Participants are tasked with predicting the performance degradation of VQA models on <strong>12,400 images</strong> containing controlled noise types.</p>
+          <div class="round-goal">
+            <i class="fas fa-bullseye"></i>
+            <span>Identify metrics that correlate strongly with ground-truth VLM performance</span>
+          </div>
+          
+          <div class="phases-container">
+            <div class="phase-item">
+              <div class="phase-header">
+                <span class="phase-label">Phase 1</span>
+                <span class="phase-status open"><i class="fas fa-circle"></i> Open</span>
+              </div>
+              <h4>Development</h4>
+              <p>Open for debugging and initial testing. Participants can familiarize themselves with the data format and submission system.</p>
+            </div>
+            <div class="phase-item">
+              <div class="phase-header">
+                <span class="phase-label">Phase 2</span>
+                <span class="phase-status official"><i class="fas fa-star"></i> Official</span>
+              </div>
+              <h4>Challenge</h4>
+              <p>The official ranking phase. Participants must submit their best-performing models to compete for the final ranking.</p>
+            </div>
+          </div>
+        </div>
 
-<!-- Leaderboard -->
-<section>
-  <h2>Leaderboard</h2>
-  <iframe 
-    src="https://www.codabench.org/competitions/13658/" 
-    width="100%" 
-    height="500">
-  </iframe>
-</section>
+        <div class="structure-card final-round">
+          <div class="round-badge">
+            <i class="fas fa-robot"></i>
+            <span>Final Round</span>
+          </div>
+          <h3>Sim-to-Real</h3>
+          <p class="round-desc">Top-performing teams from the Preliminary Round will advance to the Final Round.</p>
+          <div class="round-goal">
+            <i class="fas fa-lock"></i>
+            <span>Invitation Only - Evaluation on private, real-world robotic data</span>
+          </div>
+          
+          <div class="final-info">
+            <div class="info-item">
+              <i class="fas fa-microchip"></i>
+              <span>Real-world sensor data from laboratory robot platforms</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>Details released to qualified teams after Preliminary Round</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Organizers -->
-<section id="organizers">
-  <h2>Organizers</h2>
-  <p>
-    Your Lab / Institution<br>
-    Contact: your_email@example.com
-  </p>
-</section>
+  <section id="dataset" class="section dataset-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-database"></i> Dataset</span>
+        <h2>Dataset Statistics</h2>
+        <p class="section-desc">12,400 images with controlled distortions for robust evaluation</p>
+      </div>
 
-<footer>
-  <p>© 2026 PV Challenge</p>
-</footer>
+      <div class="dataset-overview">
+        <div class="dataset-stat-card">
+          <div class="stat-icon"><i class="fas fa-images"></i></div>
+          <div class="stat-value">12,400</div>
+          <div class="stat-name">Total Images</div>
+        </div>
+        <div class="dataset-stat-card">
+          <div class="stat-icon"><i class="fas fa-file-image"></i></div>
+          <div class="stat-value">400</div>
+          <div class="stat-name">Original Images</div>
+        </div>
+        <div class="dataset-stat-card">
+          <div class="stat-icon"><i class="fas fa-adjust"></i></div>
+          <div class="stat-value">30</div>
+          <div class="stat-name">Distortion Types</div>
+        </div>
+        <div class="dataset-stat-card">
+          <div class="stat-icon"><i class="fas fa-signal"></i></div>
+          <div class="stat-value">5</div>
+          <div class="stat-name">Severity Levels</div>
+        </div>
+      </div>
 
-<script src="script.js"></script>
+      <div class="dataset-table-container">
+        <table class="dataset-table">
+          <thead>
+            <tr>
+              <th>Split</th>
+              <th>Original Images</th>
+              <th>Distorted Images</th>
+              <th>Total</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="split-badge train">Train</span></td>
+              <td>280<br><small>(img_000 - img_279)</small></td>
+              <td>8,400<br><small>(img_000_noise01 - img_279_noise30)</small></td>
+              <td>8,680</td>
+              <td>Model Training & Fine-tuning</td>
+            </tr>
+            <tr>
+              <td><span class="split-badge val">Val</span></td>
+              <td>40<br><small>(img_280 - img_319)</small></td>
+              <td>1,200<br><small>(img_280_noise01 - img_319_noise30)</small></td>
+              <td>1,240</td>
+              <td>Model Selection & Debugging</td>
+            </tr>
+            <tr>
+              <td><span class="split-badge test">Test</span></td>
+              <td>80<br><small>(img_320 - img_399)</small></td>
+              <td>2,400<br><small>(img_320_noise01 - img_399_noise30)</small></td>
+              <td>2,480</td>
+              <td>Competition Evaluation</td>
+            </tr>
+            <tr class="total-row">
+              <td><strong>Total</strong></td>
+              <td><strong>400</strong></td>
+              <td><strong>12,000</strong></td>
+              <td><strong>12,400</strong></td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dataset-details">
+        <div class="detail-card">
+          <div class="detail-icon"><i class="fas fa-layer-group"></i></div>
+          <h4>Distortion Types</h4>
+          <p>30 distinct types of distortions simulating real-world visual degradation</p>
+        </div>
+        <div class="detail-card">
+          <div class="detail-icon"><i class="fas fa-chart-area"></i></div>
+          <h4>Severity Levels</h4>
+          <p>5 severity levels (Level 4 to Level 8) for each distortion type</p>
+        </div>
+        <div class="detail-card">
+          <div class="detail-icon"><i class="fas fa-link"></i></div>
+          <h4>Image Pairs</h4>
+          <p>Each original image has 30 distorted variations for comprehensive analysis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="evaluation" class="section evaluation-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-chart-line"></i> Evaluation</span>
+        <h2>Evaluation Metrics</h2>
+        <p class="section-desc">Submissions are evaluated based on correlation with Ground Truth scores</p>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>PLCC</h3>
+          <h4>Pearson Linear Correlation Coefficient</h4>
+          <p>Measures the <strong>linear relationship</strong> between the predicted scores and the ground truth.</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon"><i class="fas fa-sort-amount-down"></i></div>
+          <h3>SRCC</h3>
+          <h4>Spearman Rank-Order Correlation Coefficient</h4>
+          <p>Measures the <strong>monotonic relationship</strong> (ranking consistency) between the predicted scores and the ground truth.</p>
+        </div>
+      </div>
+
+      <div class="tracks-container">
+        <h3 class="tracks-title"><i class="fas fa-road"></i> Competition Tracks</h3>
+        <div class="tracks-grid">
+          <div class="track-card">
+            <div class="track-number">01</div>
+            <h4>Absolute Score</h4>
+            <span class="track-subtitle">Robustness Level</span>
+            <p>Predicting the mean performance level (Mean Opinion Score) of models on a specific distorted image.</p>
+            <div class="track-eval">
+              <i class="fas fa-calculator"></i>
+              <span>Evaluated using mean of PLCC and SRCC</span>
+            </div>
+          </div>
+          <div class="track-card">
+            <div class="track-number">02</div>
+            <h4>Relative Score</h4>
+            <span class="track-subtitle">Performance Degradation</span>
+            <p>Measuring the ratio of performance on a distorted image compared to its original, clean counterpart (Ratio of Means).</p>
+            <div class="track-eval">
+              <i class="fas fa-calculator"></i>
+              <span>Evaluated using mean of PLCC and SRCC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes-container">
+        <h3><i class="fas fa-exclamation-triangle"></i> Important Notes</h3>
+        <div class="notes-grid">
+          <div class="note-item">
+            <div class="note-icon"><i class="fas fa-check-double"></i></div>
+            <div class="note-content">
+              <h4>Consistency</h4>
+              <p>Ensure the index column matches the Test Set exactly. Any missing rows or mismatched indices will result in a submission error.</p>
+            </div>
+          </div>
+          <div class="note-item">
+            <div class="note-icon"><i class="fas fa-code"></i></div>
+            <div class="note-content">
+              <h4>Encoding</h4>
+              <p>Do not include Base64 image data in your submission; only the predicted scores are required.</p>
+            </div>
+          </div>
+          <div class="note-item">
+            <div class="note-icon"><i class="fas fa-decimal"></i></div>
+            <div class="note-content">
+              <h4>Precision</h4>
+              <p>We recommend providing scores with at least 4 decimal places for better ranking granularity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="submission" class="section submission-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-upload"></i> Submission</span>
+        <h2>Submit Your Results</h2>
+        <p class="section-desc">All submissions are handled through CodaBench platform</p>
+      </div>
+
+      <div class="submission-content">
+        <div class="submission-card">
+          <div class="submission-icon">
+            <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+          <h3>Submit via CodaBench</h3>
+          <p>All competition submissions are managed through the CodaBench platform. Please visit the competition page for detailed submission instructions and format requirements.</p>
+          <a href="https://www.codabench.org/competitions/13658/" class="btn btn-primary btn-large" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Go to CodaBench
+          </a>
+        </div>
+
+        <div class="submission-steps">
+          <h4><i class="fas fa-list-ol"></i> Submission Steps</h4>
+          <ol>
+            <li>Create an account on CodaBench if you haven't already</li>
+            <li>Join the M-VQA Challenge competition</li>
+            <li>Prepare your prediction file following the required format</li>
+            <li>Upload your submission and wait for evaluation</li>
+            <li>Check your ranking on the leaderboard</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="organizers" class="section organizers-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-users"></i> Team</span>
+        <h2>Organizers & Advisors</h2>
+      </div>
+
+      <div class="organizers-grid">
+        <div class="organizers-group">
+          <h3><i class="fas fa-user-tie"></i> Organizers</h3>
+          <div class="organizers-list">
+            <div class="organizer-card">
+              <div class="organizer-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="organizer-info">
+                <h4>Jianbo Zhang</h4>
+              </div>
+            </div>
+            <div class="organizer-card">
+              <div class="organizer-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="organizer-info">
+                <h4>Rui Qing</h4>
+              </div>
+            </div>
+            <div class="organizer-card">
+              <div class="organizer-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="organizer-info">
+                <h4>Yufei Han</h4>
+              </div>
+            </div>
+            <div class="organizer-card">
+              <div class="organizer-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="organizer-info">
+                <h4>Shiyu Liu</h4>
+              </div>
+            </div>
+            <div class="organizer-card">
+              <div class="organizer-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="organizer-info">
+                <h4>Yuanzhong Zhang</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="organizers-group advisors">
+          <h3><i class="fas fa-graduation-cap"></i> Advisory Team</h3>
+          <div class="advisors-list">
+            <div class="advisor-card">
+              <i class="fas fa-user-graduate"></i>
+              <span>Chunyi Li</span>
+            </div>
+            <div class="advisor-card">
+              <i class="fas fa-user-graduate"></i>
+              <span>Zicheng Zhang</span>
+            </div>
+            <div class="advisor-card">
+              <i class="fas fa-user-graduate"></i>
+              <span>Chris Wei Zhou</span>
+            </div>
+            <div class="advisor-card">
+              <i class="fas fa-user-graduate"></i>
+              <span>Guangtao Zhai</span>
+            </div>
+            <div class="advisor-card">
+              <i class="fas fa-user-graduate"></i>
+              <span>Weisi Lin</span>
+            </div>
+            <div class="advisor-card">
+              <i class="fas fa-user-graduate"></i>
+              <span>Roger Zimmermann</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>Contact Us</h3>
+          <p>For any inquiries, please reach out to:</p>
+          <a href="mailto:hanyufei24@sjtu.edu.cn" class="contact-email">
+            <i class="fas fa-paper-plane"></i>
+            hanyufei24@sjtu.edu.cn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fas fa-eye"></i>
+            <span>M-VQA Challenge</span>
+          </div>
+          <p>Machine-oriented Visual Media Quality Assessment</p>
+        </div>
+        <div class="footer-links">
+          <a href="#overview">Overview</a>
+          <a href="#dataset">Dataset</a>
+          <a href="#evaluation">Evaluation</a>
+          <a href="https://www.codabench.org/competitions/13658/" target="_blank">CodaBench</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 M-VQA Challenge. PV Challenge Workshop.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
