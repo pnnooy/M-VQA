@@ -342,7 +342,9 @@ body {
   color: white;
   line-height: 1;
   font-variant-numeric: tabular-nums;
-  min-width: 4ch;
+  font-feature-settings: "tnum";
+  width: 5ch;
+  display: inline-block;
   text-align: left;
 }
 
@@ -824,6 +826,7 @@ body {
   line-height: 1;
   margin-bottom: 8px;
   font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
 }
 
 .dataset-stat-card .stat-name {
