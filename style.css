@@ -233,6 +233,7 @@ body {
 }
 
 .hero-badge .acm-logo {
+  mix-blend-mode: multiply;
   height: 80px;
   width: auto;
   display: block;
