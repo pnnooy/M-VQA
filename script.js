@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.y = Math.random() * height;
         this.vx = (Math.random() - 0.5) * 0.2;
         this.vy = (Math.random() - 0.5) * 0.2;
-        this.radius = Math.random() * 3 + 2;
+        this.radius = Math.random() * 2 + 1;
         this.opacity = Math.random() * 0.5 + 0.2;
         this.originalOpacity = this.opacity;
       }
