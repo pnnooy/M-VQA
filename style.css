@@ -1336,9 +1336,9 @@ body {
 }
 
 .organizer-card:hover {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lg);
   border-color: var(--primary-200);
-  transform: translateY(-4px);
+  transform: translateY(-8px);
 }
 
 .organizer-photo {
@@ -1386,9 +1386,9 @@ body {
 }
 
 .advisor-card:hover {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lg);
   border-color: var(--primary-200);
-  transform: translateY(-4px);
+  transform: translateY(-8px);
 }
 
 .advisor-photo {
