@@ -22,7 +22,7 @@
   --white: #ffffff;
   --gradient-primary: linear-gradient(135deg, #0d9488 0%, #06b6d4 100%);
   --gradient-dark: linear-gradient(135deg, #042f2e 0%, #134e4a 100%);
-  --gradient-hero: linear-gradient(180deg, #5bb8c9 0%, #5bc8b8 50%, #4ac8c6 100%);
+  --gradient-hero: linear-gradient(180deg, #4aa8b9 0%, #4ab8a8 50%, #3ab8b6 100%);
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
