@@ -52,13 +52,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   animateElements.forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.classList.add('animate-hidden');
     observer.observe(el);
   });
 
   const style = document.createElement('style');
   style.textContent = `
+    .animate-hidden {
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
     .animate-in {
       opacity: 1 !important;
       transform: translateY(0);
