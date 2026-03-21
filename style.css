@@ -375,12 +375,14 @@ body {
   width: 5ch;
   display: inline-block;
   text-align: left;
+  font-family: var(--font-ui);
 }
 
 .stat-label {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.8);
   margin-top: 4px;
+  font-family: var(--font-ui);
 }
 
 .scroll-indicator {
@@ -490,6 +492,7 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 20px;
+  font-family: var(--font-ui);
 }
 
 .overview-main .card p {
@@ -629,6 +632,7 @@ body {
   font-weight: 600;
   border-radius: var(--radius-sm);
   margin-bottom: 12px;
+  font-family: var(--font-ui);
 }
 
 .timeline-content h4 {
@@ -636,6 +640,7 @@ body {
   font-weight: 600;
   color: var(--gray-900);
   margin-bottom: 8px;
+  font-family: var(--font-ui);
 }
 
 .timeline-content p {
@@ -694,6 +699,7 @@ body {
   font-weight: 700;
   color: var(--gray-900);
   margin-bottom: 16px;
+  font-family: var(--font-ui);
 }
 
 .round-desc {
@@ -858,6 +864,7 @@ body {
   margin-bottom: 8px;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
+  font-family: var(--font-ui);
 }
 
 .dataset-stat-card .stat-name {
@@ -973,6 +980,7 @@ body {
   font-weight: 600;
   color: var(--gray-900);
   margin-bottom: 8px;
+  font-family: var(--font-ui);
 }
 
 .detail-card p {
@@ -1033,6 +1041,7 @@ body {
   font-weight: 800;
   margin-bottom: 8px;
   color: var(--primary-200);
+  font-family: var(--font-ui);
 }
 
 .metric-card h4 {
@@ -1106,6 +1115,7 @@ body {
   font-weight: 700;
   color: var(--gray-900);
   margin-bottom: 4px;
+  font-family: var(--font-ui);
 }
 
 .track-subtitle {
@@ -1195,6 +1205,7 @@ body {
   font-weight: 600;
   color: var(--gray-900);
   margin-bottom: 6px;
+  font-family: var(--font-ui);
 }
 
 .note-content p {
@@ -1262,6 +1273,7 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 16px;
+  font-family: var(--font-ui);
 }
 
 .submission-card p {
@@ -1473,6 +1485,7 @@ body {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 8px;
+  font-family: var(--font-ui);
 }
 
 .contact-card p {
