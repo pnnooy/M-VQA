@@ -192,7 +192,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url('https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=1920&q=80') center/cover fixed;
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #06b6d4 100%) url('https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=1920&q=80') center/cover fixed;
   z-index: 0;
 }
 
