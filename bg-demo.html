@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Demo - M-VQA Challenge</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;500;600;700;900&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0d9488;
+      --primary-light: #14b8a6;
+      --primary-dark: #0f766e;
+      --primary-50: #f0fdfa;
+      --primary-100: #ccfbf1;
+      --primary-200: #99f6e4;
+      --accent: #06b6d4;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-400: #94a3b8;
+      --gray-500: #64748b;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1e293b;
+      --gray-900: #0f172a;
+      --white: #ffffff;
+      --radius-sm: 0.375rem;
+      --radius: 0.5rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1rem;
+      --font-heading: 'Merriweather', serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-ui: 'Nunito', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: #1e293b;
+      min-height: 100vh;
+    }
+
+    .demo-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .demo-title {
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 600;
+      font-family: var(--font-ui);
+    }
+
+    .demo-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .demo-label {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.875rem;
+      font-family: var(--font-ui);
+    }
+
+    .bg-selector {
+      display: flex;
+      gap: 8px;
+    }
+
+    .bg-option {
+      width: 60px;
+      height: 40px;
+      border-radius: var(--radius);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .bg-option:hover {
+      transform: scale(1.1);
+    }
+
+    .bg-option.active {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.3);
+    }
+
+    .overlay-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      font-size: 0.875rem;
+      font-family: var(--font-ui);
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .toggle-switch.active {
+      background: var(--primary);
+    }
+
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-switch.active::after {
+      transform: translateX(20px);
+    }
+
+    .preview-container {
+      margin-top: 72px;
+      min-height: calc(100vh - 72px);
+    }
+
+    .hero-preview {
+      position: relative;
+      min-height: calc(100vh - 72px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      transition: background-image 0.5s ease;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.85) 0%, rgba(13, 148, 136, 0.75) 50%, rgba(6, 182, 212, 0.7) 100%);
+      transition: opacity 0.3s ease;
+    }
+
+    .hero-overlay.hidden {
+      opacity: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 900px;
+      padding: 40px 20px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeInDown 0.6s ease;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge .acm-logo {
+      height: 80px;
+      width: auto;
+      display: block;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      animation: fadeInUp 0.6s ease 0.1s both;
+      font-family: var(--font-heading);
+    }
+
+    .hero-subtitle {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 0.6s ease 0.2s both;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 48px;
+      animation: fadeInUp 0.6s ease 0.3s both;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: var(--font-ui);
+      text-decoration: none;
+      border-radius: var(--radius-md);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(13, 148, 136, 0.5);
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      animation: fadeInUp 0.6s ease 0.4s both;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .stat-item i {
+      font-size: 1.5rem;
+      color: white;
+      opacity: 0.8;
+    }
+
+    .stat-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      font-family: var(--font-ui);
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 4px;
+      font-family: var(--font-ui);
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 4rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .demo-header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 16px;
+      }
+
+      .demo-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-stats {
+        gap: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-header">
+    <div class="demo-title">🎨 Background Image Demo - Rio de Janeiro</div>
+    <div class="demo-controls">
+      <span class="demo-label">Select Background:</span>
+      <div class="bg-selector">
+        <div class="bg-option active" data-bg="1" style="background-image: url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=1920&q=80');" title="Rio Sunset"></div>
+        <div class="bg-option" data-bg="2" style="background-image: url('https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=1920&q=80');" title="Christ the Redeemer"></div>
+        <div class="bg-option" data-bg="3" style="background-image: url('https://images.unsplash.com/photo-1544989164-31dc3c645987?w=1920&q=80');" title="Rio Beach"></div>
+        <div class="bg-option" data-bg="4" style="background-image: url('https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?w=1920&q=80');" title="Rio Night"></div>
+        <div class="bg-option" data-bg="5" style="background-image: url('https://images.unsplash.com/photo-1551410224-699683e15636?w=1920&q=80');" title="Sugarloaf Mountain"></div>
+        <div class="bg-option" data-bg="6" style="background-image: url('https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?w=1920&q=80');" title="Copacabana"></div>
+      </div>
+      <div class="overlay-toggle">
+        <span>Overlay:</span>
+        <div class="toggle-switch active" id="overlayToggle"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-container">
+    <div class="hero-preview" id="heroPreview">
+      <div class="hero-overlay" id="heroOverlay"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <img src="images/LOGO-ACM-2026-V2-remove.png" alt="ACM Multimedia 2026" class="acm-logo">
+        </div>
+        <h1>Machine-oriented Visual<br>Media Quality Assessment</h1>
+        <p class="hero-subtitle">Exploring and enhancing the visual robustness of Vision-Language Models (VLMs) within complex, real-world physical environments</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary">
+            <i class="fas fa-play-circle"></i> Start Competing
+          </a>
+          <a href="#" class="btn btn-primary">
+            <i class="fas fa-book-open"></i> Learn More
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <i class="fas fa-images"></i>
+            <div class="stat-info">
+              <span class="stat-number">12,400</span>
+              <span class="stat-label">Images</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-microchip"></i>
+            <div class="stat-info">
+              <span class="stat-number">12</span>
+              <span class="stat-label">VLMs</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-layer-group"></i>
+            <div class="stat-info">
+              <span class="stat-number">30</span>
+              <span class="stat-label">Distortions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const backgrounds = {
+      1: 'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=1920&q=80',
+      2: 'https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=1920&q=80',
+      3: 'https://images.unsplash.com/photo-1544989164-31dc3c645987?w=1920&q=80',
+      4: 'https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?w=1920&q=80',
+      5: 'https://images.unsplash.com/photo-1551410224-699683e15636?w=1920&q=80',
+      6: 'https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?w=1920&q=80'
+    };
+
+    const bgOptions = document.querySelectorAll('.bg-option');
+    const heroPreview = document.getElementById('heroPreview');
+    const heroOverlay = document.getElementById('heroOverlay');
+    const overlayToggle = document.getElementById('overlayToggle');
+
+    bgOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        bgOptions.forEach(opt => opt.classList.remove('active'));
+        this.classList.add('active');
+        
+        const bgId = this.dataset.bg;
+        heroPreview.style.backgroundImage = `url('${backgrounds[bgId]}')`;
+      });
+    });
+
+    overlayToggle.addEventListener('click', function() {
+      this.classList.toggle('active');
+      heroOverlay.classList.toggle('hidden');
+    });
+
+    heroPreview.style.backgroundImage = `url('${backgrounds[1]}')`;
+  </script>
+</body>
+</html>
