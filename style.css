@@ -208,7 +208,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(30, 41, 59, 0.7) 100%);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.63) 0%, rgba(30, 41, 59, 0.58) 100%);
 }
 
 .hero-bg::after {
