@@ -349,12 +349,6 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 20px 28px;
-  background: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-lg);
 }
 
 .stat-item i {
@@ -369,7 +363,7 @@ body {
 }
 
 .stat-number {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: white;
   line-height: 1;
@@ -378,14 +372,14 @@ body {
   width: 5ch;
   display: inline-block;
   text-align: left;
-  font-family: var(--font-ui);
+  font-family: var(--font-heading);
 }
 
 .stat-label {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
   margin-top: 4px;
-  font-family: var(--font-ui);
+  font-family: var(--font-heading);
 }
 
 .scroll-indicator {
