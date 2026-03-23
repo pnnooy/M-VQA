@@ -161,7 +161,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 10px 20px;
-  background: var(--gradient-primary);
+  background: #0f766e;
   color: white;
   text-decoration: none;
   font-size: 0.875rem;
@@ -169,6 +169,7 @@ body {
   border-radius: var(--radius-md);
   transition: all 0.3s ease;
   box-shadow: var(--shadow);
+  font-family: var(--font-heading);
 }
 
 .nav-cta:hover {
@@ -196,9 +197,22 @@ body {
   background-image: url('https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=1920&q=80');
   background-position: left top;
   background-size: 125% auto;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-repeat: no-repeat;
   z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .hero-bg {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-bg {
+    background-size: cover;
+    background-position: center top;
+  }
 }
 
 .hero-bg::before {
