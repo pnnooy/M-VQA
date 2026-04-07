@@ -1220,6 +1220,143 @@ body {
   color: var(--gray-500);
 }
 
+.additional-data-section {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.section-subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 32px;
+  font-family: var(--font-ui);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.additional-data-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .additional-data-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.data-card {
+  background: var(--gray-50);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  transition: all 0.3s ease;
+}
+
+.data-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-200);
+}
+
+.data-card .data-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--primary-50);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.data-card .data-icon i {
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.data-card h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 12px;
+  font-family: var(--font-ui);
+}
+
+.data-card p {
+  font-size: 0.9375rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.data-card a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.data-card a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.citation-section {
+  background: var(--gray-50);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.citation-section h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 16px;
+  font-family: var(--font-ui);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.citation-code {
+  background: var(--gray-800);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  overflow-x: auto;
+}
+
+.citation-code pre {
+  color: var(--gray-100);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.citation-code pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.citation-code pre::-webkit-scrollbar-track {
+  background: var(--gray-700);
+  border-radius: 4px;
+}
+
+.citation-code pre::-webkit-scrollbar-thumb {
+  background: var(--gray-500);
+  border-radius: 4px;
+}
+
+.citation-code pre::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
+
 .evaluation-section {
   background: white;
 }
