@@ -15,6 +15,8 @@
 
 The M-VQA Challenge is a grand challenge for ACM Multimedia 2026, focusing on machine-oriented visual media quality assessment. This challenge aims to advance reliable image understanding for machine preference and support robust Embodied AI applications.
 
+###challenge home page:  [M-VQA Challenge](https://m-vqa-challenge.github.io/M-VQA/)
+
 ### Competition Structure
 
 The competition is organized into three distinct tracks:
@@ -63,6 +65,8 @@ For any inquiries, please reach out to:
 ### 概述
 
 M-VQA 挑战赛是 ACM Multimedia 2026 的一个官方挑战，专注于机器导向的视觉媒体质量评估。该挑战赛旨在推进机器偏好的可靠图像理解，支持稳健的具身 AI 应用。
+
+###比赛主页:  [M-VQA Challenge](https://m-vqa-challenge.github.io/M-VQA/)
 
 ### 比赛结构
 
